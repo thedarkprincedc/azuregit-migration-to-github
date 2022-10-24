@@ -106,7 +106,7 @@ function createOrganizationRepository{
         "name" = $projectName
         "description" = "This is your first repository"
         "homepage" = "https://github.com"
-        "private" = false
+        "private" = true
         "has_issues" = true
         "has_projects" = true
         "has_wiki" = true
