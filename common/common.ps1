@@ -70,10 +70,10 @@ function getAzureRepositories{
 function getAzureRepositoriesOnPremise{
     param(
         [string]$baseurl = $env:AZ_DEVOPS_BASEURL,
-        [string]$project,
+        [string]$organization,
         [string]$authToken
     )
-    $url = "$baseurl/$project/_apis/git/repositories?api-version=5.1"
+    $url = "$baseurl/$organization/_apis/git/repositories?api-version=5.1"
     $headers = @{Authorization = "Basic $authToken"}
 
     Invoke-RestMethod -Uri $url -Headers $headers
