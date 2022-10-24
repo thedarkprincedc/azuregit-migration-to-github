@@ -69,7 +69,7 @@ function getAzureRepositories{
 
 function getAzureRepositoriesOnPremise{
     param(
-        [string]$baseurl,
+        [string]$baseurl = $env:AZ_DEVOPS_BASEURL,
         [string]$project,
         [string]$authToken
     )
