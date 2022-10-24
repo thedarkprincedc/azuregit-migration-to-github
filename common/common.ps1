@@ -67,6 +67,18 @@ function getAzureRepositories{
     Invoke-RestMethod -Uri $url -Headers $headers
 }
 
+function getAzureRepositoriesOnPremise{
+    param(
+        [string]$baseurl,
+        [string]$project,
+        [string]$authToken
+    )
+    $url = "$baseurl/$project/_apis/git/repositories?api-version=5.1"
+    $headers = @{Authorization = "Basic $authToken"}
+
+    Invoke-RestMethod -Uri $url -Headers $headers
+}
+
 function createPersonalRepository{
     param(
         [string]$accessToken,
